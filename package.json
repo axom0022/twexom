@@ -1,0 +1,115 @@
+{
+  "name": "twexom",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A modular motion engine for timelines, scroll scenes, gestures, SVG, text, layout and physics animation.",
+  "license": "MIT",
+  "main": "./dist/twexom.cjs",
+  "module": "./dist/twexom.esm.js",
+  "types": "./types/index.d.ts",
+  "browser": "./dist/twexom.esm.js",
+  "unpkg": "./dist/twexom.min.iife.js",
+  "jsdelivr": "./dist/twexom.min.iife.js",
+  "files": [
+    "dist/",
+    "types/",
+    "adapters/",
+    "src/",
+    "README.md",
+    "LICENSE",
+    "BENCHMARKS.md",
+    "COMPARISON.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./dist/twexom.esm.js",
+      "require": "./dist/twexom.cjs",
+      "default": "./dist/twexom.esm.js"
+    },
+    "./all": {
+      "types": "./types/all.d.ts",
+      "import": "./dist/twexom-all.esm.js",
+      "require": "./dist/twexom-all.cjs",
+      "default": "./dist/twexom-all.esm.js"
+    },
+    "./react": {
+      "types": "./types/react.d.ts",
+      "import": "./dist/twexom-react.esm.js",
+      "require": "./dist/twexom-react.cjs"
+    },
+    "./vue": {
+      "types": "./types/vue.d.ts",
+      "import": "./dist/twexom-vue.esm.js",
+      "require": "./dist/twexom-vue.cjs"
+    },
+    "./svelte": {
+      "types": "./types/svelte.d.ts",
+      "import": "./dist/twexom-svelte.esm.js",
+      "require": "./dist/twexom-svelte.cjs"
+    },
+    "./angular": {
+      "types": "./types/angular.d.ts",
+      "import": "./dist/twexom-angular.esm.js",
+      "require": "./dist/twexom-angular.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "dev": "node scripts/sync-source.js && vite --host 0.0.0.0",
+    "build": "node scripts/sync-source.js && vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "release": "npm run build && node scripts/build-release.js",
+    "release:cdn": "npm run release && node scripts/publish-cdn.js",
+    "test": "node --test tests/*.test.js",
+    "test:types": "tsc --noEmit --strict --target ES2020 --module NodeNext --moduleResolution NodeNext --skipLibCheck tests/types.ts tests/adapter-types.ts",
+    "test:release": "node scripts/test-release.js",
+    "test:production": "node scripts/test-production.js",
+    "test:browser": "node scripts/build-adapter-fixtures.js && playwright test",
+    "test:browser:cross": "playwright test --config=playwright.cross.config.js",
+    "test:browser:all": "npm run test:browser && npm run test:browser:cross",
+    "benchmark": "node scripts/build-benchmarks.js && node benchmarks/run.js",
+    "benchmark:baseline": "node scripts/build-benchmarks.js && node benchmarks/run.js --baseline",
+    "benchmark:report": "node scripts/report-benchmarks.js",
+    "compare": "node scripts/build-benchmarks.js && node scripts/build-comparison.js && node benchmarks/scale.js",
+    "check": "node scripts/check-source.js",
+    "prepublishOnly": "npm run release"
+  },
+  "peerDependencies": {
+    "@angular/core": ">=16",
+    "react": ">=18",
+    "vue": ">=3"
+  },
+  "peerDependenciesMeta": {
+    "@angular/core": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    },
+    "vue": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@angular/common": "^21.2.25",
+    "@angular/compiler": "^21.2.25",
+    "@angular/core": "^21.2.25",
+    "@angular/platform-browser": "^21.2.25",
+    "@playwright/test": "^1.64.1",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "acorn": "^8.14.0",
+    "esbuild": "^0.28.2",
+    "gsap": "^3.15.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "rxjs": "^7.8.2",
+    "svelte": "^5.57.2",
+    "tslib": "^2.8.1",
+    "typescript": "^5.7.2",
+    "vite": "^6.1.0",
+    "vue": "^3.5.44",
+    "zone.js": "^0.15.1"
+  }
+}
