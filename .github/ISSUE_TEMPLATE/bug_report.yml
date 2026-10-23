@@ -1,0 +1,37 @@
+name: Bug report
+description: Report a reproducible Twexom defect
+title: '[Bug] '
+labels: ['bug']
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: Describe the expected and actual behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Include the smallest code sample or a repository link.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Twexom version
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Browser, OS, device, viewport, and whether this was emulation or physical hardware.
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation and console output
+      description: Include relevant test commands, errors, and screenshots.
