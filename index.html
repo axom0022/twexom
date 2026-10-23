@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0a0c0b" />
+    <meta name="description" content="Twexom is a dependency-free motion engine for expressive timelines, scroll scenes and touch gestures." />
+    <title>Twexom - Kinetic Timeline Demo</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23c7ff4a'/%3E%3Cpath d='M13 19h38L36 46H25l6-17H13z' fill='%230a0c0b'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body class="kinetic-page">
+    <div class="ambient-orb" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="brand" href="/index.html" aria-label="Twexom home">
+        <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><path d="M3 7h30L21 30h-9l5-15H3z" fill="currentColor"/><path d="M25 7h8l-5 9h-8z" fill="currentColor" opacity=".45"/></svg>
+        <span class="brand-word">twexom</span>
+        <span class="brand-tag">MOTION ENGINE</span>
+      </a>
+      <nav class="demo-switch" aria-label="Demos">
+        <a class="active" href="/index.html"><span>01</span> Kinetic</a>
+        <a href="/gesture.html"><span>02</span> Field</a>
+      </nav>
+      <div class="engine-status"><i></i><span>ENGINE ONLINE</span><b>v1.0</b></div>
+    </header>
+
+    <main class="kinetic-stage">
+      <section class="kinetic-copy" aria-labelledby="hero-title">
+        <div class="eyebrow hero-reveal"><span>DEMO 01</span><span>TIMELINE CHOREOGRAPHY</span></div>
+        <h1 class="hero-title" id="hero-title" aria-label="Motion without friction">
+          <span class="title-line"><span class="title-inner">MOTION</span></span>
+          <span class="title-line title-outline"><span class="title-inner">WITHOUT</span></span>
+          <span class="title-line title-accent"><span class="title-inner">FRICTION<span class="acid-dot">.</span></span></span>
+        </h1>
+        <div class="hero-bottom">
+          <p class="hero-summary hero-reveal">A dependency-free engine with an expressive range. Direct the scene, switch the easing, and make every frame yours.</p>
+          <div class="hero-actions hero-reveal">
+            <button class="primary-action" id="hero-replay" type="button"><span>Replay scene</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.34 5.66M20 4v7h-7"/></svg></button>
+            <a class="text-action" href="/gesture.html">Try the field <span>↗</span></a>
+          </div>
+        </div>
+        <div class="hero-specs hero-reveal" aria-label="Engine features">
+          <div><strong>00</strong><span>dependencies</span></div>
+          <div><strong>60</strong><span>fps ready</span></div>
+          <div><strong>∞</strong><span>possibilities</span></div>
+        </div>
+      </section>
+
+      <section class="scene" aria-label="Animated Twexom capability visualization">
+        <div class="scene-parallax">
+          <div class="orbit-shell">
+            <div class="scene-rule rule-one"></div>
+            <div class="scene-rule rule-two"></div>
+            <div class="orbit-ring orbit-ring-one"><i></i><i></i></div>
+            <div class="orbit-ring orbit-ring-two"><i></i></div>
+            <div class="core"><span>tw</span><small>ENGINE</small></div>
+            <div class="axis-label axis-x">X / 100</div>
+            <div class="axis-label axis-y">Y / 100</div>
+          </div>
+
+          <div class="motion-card card-one">
+            <div class="card-head"><span>EASING</span><i>01</i></div>
+            <svg class="ease-curve" viewBox="0 0 180 62" aria-hidden="true"><path class="curve-grid" d="M0 15.5H180M0 31H180M0 46.5H180M45 0V62M90 0V62M135 0V62"/><path class="curve-line" d="M2 58C75 58 40 4 178 4"/></svg>
+            <strong id="ease-label">power4.out</strong>
+          </div>
+
+          <div class="motion-card card-two">
+            <div class="card-head"><span>STAGGER</span><i>02</i></div>
+            <div class="stagger-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <strong>each: 0.08</strong>
+          </div>
+
+          <div class="motion-card card-three">
+            <div class="card-head"><span>TIMELINE</span><i>03</i></div>
+            <div class="mini-track"><i></i><i></i><i></i></div>
+            <strong>one shared clock</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="control-deck" aria-label="Animation controls">
+        <div class="transport-buttons">
+          <button class="play-button" id="master-play" type="button" aria-label="Pause animation">
+            <svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg>
+            <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7z"/></svg>
+          </button>
+          <button class="icon-button" id="master-reverse" type="button" aria-label="Reverse animation" title="Reverse"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m11 6-7 6 7 6V6Zm9 0-7 6 7 6V6Z"/></svg></button>
+          <button class="icon-button" id="master-restart" type="button" aria-label="Restart animation" title="Restart"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.34 5.66M20 4v7h-7"/></svg></button>
+        </div>
+        <div class="scrub-area">
+          <div class="scrub-meta"><span>MASTER TIMELINE</span><output id="time-output">00:00 / 00:00</output></div>
+          <input id="scrubber" class="scrubber" type="range" min="0" max="1000" value="0" aria-label="Scrub master timeline" />
+        </div>
+        <label class="ease-control"><span>EASING</span><select id="ease-select"><option value="power4.out">power4.out</option><option value="expo.out">expo.out</option><option value="back.out">back.out</option><option value="elastic.out">elastic.out</option><option value="bounce.out">bounce.out</option></select></label>
+        <button class="speed-button" id="speed-button" type="button" aria-label="Change playback speed"><span>SPEED</span><strong>1×</strong></button>
+      </section>
+    </main>
+    <div class="keyboard-hint"><span>SPACE</span> PLAY / PAUSE <span>R</span> RESTART</div>
+    <script type="module" src="/demos/kinetic.js"></script>
+  <script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4f1f003efe108aa',t:'MTc5Mjc3MTA0Nw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
