@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#eef0e9" />
+    <meta name="description" content="Explore Twexom scroll scrubbing and unified mouse, pen and touch gestures in the interactive Field demo." />
+    <title>Twexom - Scroll and Gesture Demo</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23555cf6'/%3E%3Cpath d='M13 19h38L36 46H25l6-17H13z' fill='%23eef0e9'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body class="field-page" id="top">
+    <header class="topbar field-topbar">
+      <a class="brand" href="/index.html" aria-label="Twexom home">
+        <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true"><path d="M3 7h30L21 30h-9l5-15H3z" fill="currentColor"/><path d="M25 7h8l-5 9h-8z" fill="currentColor" opacity=".45"/></svg>
+        <span class="brand-word">twexom</span>
+        <span class="brand-tag">MOTION ENGINE</span>
+      </a>
+      <nav class="demo-switch" aria-label="Demos">
+        <a href="/index.html"><span>01</span> Kinetic</a>
+        <a class="active" href="/gesture.html"><span>02</span> Field</a>
+      </nav>
+      <a class="source-link" href="/twexom.js" target="_blank" rel="noreferrer">SOURCE <span>↗</span></a>
+    </header>
+
+    <main>
+      <section class="field-hero" aria-labelledby="field-title">
+        <div class="field-copy">
+          <div class="eyebrow field-reveal"><span>DEMO 02</span><span>SCROLL + GESTURE</span></div>
+          <h1 id="field-title" aria-label="Put your hands on the web">
+            <span class="field-line"><span>PUT YOUR</span></span>
+            <span class="field-line field-serif"><span>hands on</span></span>
+            <span class="field-line"><span>THE WEB.</span></span>
+          </h1>
+          <p class="field-intro field-reveal">Drag the object. Scroll the field. Mouse, pen, and touch all speak the same motion language.</p>
+          <div class="input-tags field-reveal"><span>POINTER</span><span>TOUCH</span><span>SCROLL</span></div>
+        </div>
+
+        <div class="playground field-reveal" id="playground">
+          <div class="playground-grid" aria-hidden="true"></div>
+          <div class="playground-label"><i></i><span id="drag-status">READY TO MOVE</span></div>
+          <div class="coordinate coordinate-x">X <output id="drag-x">000</output></div>
+          <div class="coordinate coordinate-y">Y <output id="drag-y">000</output></div>
+          <div class="drag-ring" aria-hidden="true"></div>
+          <div class="dragger" id="dragger" role="button" tabindex="0" aria-label="Draggable object. Use arrow keys to move.">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5v38M5 24h38M24 5l-5 5m5-5 5 5M43 24l-5-5m5 5-5 5M24 43l5-5m-5 5-5-5M5 24l5 5m-5-5 5-5"/></svg>
+            <strong>DRAG<br />ME</strong>
+            <span>INERTIA / ON</span>
+          </div>
+          <div class="playground-note">UNIFIED POINTER INPUT<br />WITH BOUNDED INERTIA</div>
+        </div>
+
+        <a class="scroll-cue field-reveal" href="#scroll-study"><span>SCROLL TO DIRECT TIME</span><i>↓</i></a>
+      </section>
+
+      <section class="scroll-space" id="scroll-study" aria-label="Scroll-driven animation study">
+        <div class="sticky-stage">
+          <div class="scroll-hud">
+            <div><span>SCROLL STUDY</span><strong id="scroll-percent">000%</strong></div>
+            <div class="scroll-panel-count"><span id="panel-current">01</span><i></i><span>03</span></div>
+          </div>
+          <div class="field-numeral" aria-hidden="true">02</div>
+          <div class="horizontal-track">
+            <article class="story-panel panel-one">
+              <div class="panel-index">01 / SCRUB</div>
+              <div class="panel-copy">
+                <p>SCROLL IS THE CLOCK</p>
+                <h2><span>TIME</span><span>FOLLOWS</span><span>YOU.</span></h2>
+              </div>
+              <div class="panel-aside"><span>LINK ANY TIMELINE<br />TO SCROLL PROGRESS</span><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52"/><path d="M60 8v52l35 20"/></svg></div>
+            </article>
+            <article class="story-panel panel-two">
+              <div class="panel-index">02 / TRANSFORM</div>
+              <div class="panel-copy">
+                <p>COMPLEX MADE FLUENT</p>
+                <h2><span>PIXELS</span><span>WITH</span><span>PURPOSE.</span></h2>
+              </div>
+              <div class="panel-aside panel-shapes" aria-hidden="true"><i></i><i></i><i></i></div>
+            </article>
+            <article class="story-panel panel-three">
+              <div class="panel-index">03 / RESPOND</div>
+              <div class="panel-copy">
+                <p>DESKTOP TO POCKET</p>
+                <h2><span>ONE ENGINE.</span><span>EVERY</span><span>SCREEN.</span></h2>
+              </div>
+              <div class="panel-aside responsive-mark" aria-hidden="true"><i></i><i></i><span>↔</span></div>
+            </article>
+          </div>
+          <div class="scroll-meter"><i id="scroll-fill"></i></div>
+        </div>
+      </section>
+
+      <section class="feature-section" aria-labelledby="feature-title">
+        <div class="feature-heading">
+          <div class="eyebrow"><span>THE TOOLKIT</span><span>BUILT FOR THE MODERN WEB</span></div>
+          <h2 id="feature-title">SMALL API.<br /><em>BIG RANGE.</em></h2>
+          <p>One consistent motion model, from a two-property tween to a complete interactive scene.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card"><span>01</span><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 34h10V22h10V12h16"/></svg><h3>Timelines</h3><p>Sequence, overlap, label, repeat, reverse, and scrub complex choreography.</p></article>
+          <article class="feature-card"><span>02</span><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5v38M15 14l9-9 9 9M15 34l9 9 9-9"/></svg><h3>Scroll scenes</h3><p>Link progress to any animation with flexible start, end, and smoothing controls.</p></article>
+          <article class="feature-card"><span>03</span><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M13 25V11a4 4 0 0 1 8 0v11-15a4 4 0 0 1 8 0v15-11a4 4 0 0 1 8 0v16-7a4 4 0 0 1 8 0v12c0 9-6 14-15 14-8 0-12-4-16-10L7 27c-3-5 3-8 6-2Z"/></svg><h3>Gestures</h3><p>Drag with mouse, pen, or touch. Bounds, velocity, and inertia are built in.</p></article>
+          <article class="feature-card"><span>04</span><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 40C27 40 12 8 44 8"/></svg><h3>Rich easing</h3><p>Power, sine, expo, circ, back, elastic, bounce, steps, and custom functions.</p></article>
+          <article class="feature-card"><span>05</span><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="4" y="8" width="30" height="22" rx="2"/><path d="M0 36h38M15 30v6"/><rect x="35" y="18" width="11" height="25" rx="2"/></svg><h3>Responsive</h3><p>Passive listeners, refreshable measurements, and contexts for clean adaptation.</p></article>
+          <article class="feature-card"><span>06</span><svg viewBox="0 0 48 48" aria-hidden="true"><path d="m24 4 18 10v20L24 44 6 34V14Z"/><path d="m6 14 18 10 18-10M24 24v20"/></svg><h3>Zero dependencies</h3><p>No framework, no plugin tax, and no hidden runtime. Just open standards.</p></article>
+        </div>
+        <div class="next-demo">
+          <span>NEXT UP / 01</span>
+          <a href="/index.html">DIRECT THE<br /><em>KINETIC</em> SCENE <i>↗</i></a>
+        </div>
+      </section>
+    </main>
+    <footer class="field-footer"><a class="brand" href="/index.html"><span class="brand-word">twexom</span></a><span>MOTION WITHOUT FRICTION © 2026</span><a href="#top" id="back-top">BACK TO TOP ↑</a></footer>
+    <script type="module" src="/demos/gesture.js"></script>
+  <script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4f1eafa0e681f12',t:'MTc5Mjc3MDg0MA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
